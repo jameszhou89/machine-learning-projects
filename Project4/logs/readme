@@ -1,1 +1,42 @@
+parameter setting 
+1)sim_no-learning
+state = (waypoint,inputs['light'],inputs['oncoming’])
+self.epsilon = self.epsilon-0.05
+learning=False
+alpha=0.6
+tolerance=0.02
 
+2)sim_default-learning1
+state = (waypoint,inputs['light'],inputs['oncoming’])
+self.epsilon = self.epsilon-0.05
+learning=True
+alpha=0.6
+tolerance=0.02
+
+3)sim_default-learning2
+state = (waypoint,inputs['light'],inputs['oncoming’],deadline)
+self.epsilon = self.epsilon-0.05
+learning=True
+alpha=0.6
+tolerance=0.02
+
+4)sim_improved-learning1
+state =  (waypoint,inputs['light'],inputs['oncoming'],deadline)
+self.epsilon = self.epsilon*0.99
+learning=True
+alpha=0.6
+tolerance=0.02
+
+5)sim_improved-learning2
+state = (waypoint,inputs['light'],inputs['oncoming’])
+self.epsilon = self.epsilon*0.99
+learning=True
+alpha=0.6
+tolerance=0.02
+
+6)sim_improved-learning3
+state = (waypoint,inputs['light'],inputs['oncoming’])
+self.epsilon = self.epsilon*0.99
+learning=True
+alpha=0.6
+tolerance=0.03
