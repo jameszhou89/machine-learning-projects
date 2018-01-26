@@ -6,37 +6,36 @@ learning=False
 alpha=0.6
 tolerance=0.02
 
-2)sim_default-learning1
-state = (waypoint,inputs['light'],inputs['oncoming’])
-self.epsilon = self.epsilon-0.05
-learning=True
-alpha=0.6
-tolerance=0.02
+2)sim_default-learning3
+state = (waypoint,inputs['light'],inputs['oncoming'],inputs['left'],inputs['right'])
+self.epsilon = self.epsilon - 0.05
+alpha=0.7
+tolerance=0.01
 
-3)sim_default-learning2
-state = (waypoint,inputs['light'],inputs['oncoming’],deadline)
-self.epsilon = self.epsilon-0.05
-learning=True
-alpha=0.6
-tolerance=0.02
+3)sim_improved-learning4
+state = (waypoint,inputs['light'],inputs['oncoming'],inputs['left'],inputs['right'])
+ self.trial = self.trial + 0.5
+self.epsilon = math.cos(0.01*self.trial) 
+alpha=0.7
+tolerance=0.01
 
-4)sim_improved-learning1
-state =  (waypoint,inputs['light'],inputs['oncoming'],deadline)
+4)sim_improved-learning5
+state = (waypoint,inputs['light'],inputs['oncoming'],inputs['left'],inputs['right'])
 self.epsilon = self.epsilon*0.99
-learning=True
-alpha=0.6
-tolerance=0.02
+alpha=0.7
+tolerance=0.01
 
-5)sim_improved-learning2
-state = (waypoint,inputs['light'],inputs['oncoming’])
-self.epsilon = self.epsilon*0.99
-learning=True
-alpha=0.6
-tolerance=0.02
+5)sim_improved-learning6
+state = (waypoint,inputs['light'],inputs['oncoming'],inputs['left'],inputs['right'])
+self.trial = self.trial + 0.5
+self.epsilon = math.cos(0.01*self.trial) 
+alpha=0.5
+tolerance=0.01
 
-6)sim_improved-learning3
-state = (waypoint,inputs['light'],inputs['oncoming’])
-self.epsilon = self.epsilon*0.99
-learning=True
-alpha=0.6
-tolerance=0.03
+
+6)sim_improved-learning7
+state = (waypoint,inputs['light'],inputs['oncoming'],inputs['left'],inputs['right'])
+ self.trial = self.trial + 0.5
+self.epsilon = math.cos(0.01*self.trial) 
+alpha=0.9
+tolerance=0.01
