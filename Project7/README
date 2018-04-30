@@ -1,0 +1,4 @@
+1.XGBoost安装
+https://anaconda.org/anaconda/py-xgboost
+
+2.运行代码需要时间为30Min(with no aws)
